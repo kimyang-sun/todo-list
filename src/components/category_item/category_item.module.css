@@ -1,0 +1,14 @@
+@value makerGrey from '../../common/colors.css';
+
+.container {
+  font-size: 1rem;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.container:hover {
+  color: makerGrey;
+}

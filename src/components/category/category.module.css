@@ -4,15 +4,20 @@
   flex-basis: 200px;
 }
 
-.button {
+.addButton {
   background-color: makerGreen;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   padding: 3px 6px;
   transition: opacity 0.5s;
   border-radius: 3px;
+  margin: 10px 0;
 }
 
-.button:hover {
+.addButton:hover {
   opacity: 0.8;
+}
+
+.categories {
+  padding-top: 10px;
 }

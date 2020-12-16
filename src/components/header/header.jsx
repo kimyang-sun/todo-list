@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from '../search/search';
 import styles from './header.module.css';
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
         <span className={styles.date}>2020년 12월 16일</span>
         <span className={styles.day}>수요일</span>
       </h1>
-      <input className={styles.input} type="text" placeholder="검색" />
+      <Search />
     </header>
   );
 };

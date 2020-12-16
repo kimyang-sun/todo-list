@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './category_item.module.css';
 
 const CategoryItem = () => {
-  return <li>목록 1</li>;
+  return <li className={styles.container}>목록</li>;
 };
 
 export default CategoryItem;

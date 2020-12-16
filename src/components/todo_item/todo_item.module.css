@@ -1,0 +1,48 @@
+@value makerGreen, makerGrey, makerLightGrey from '../../common/colors.css';
+
+.container {
+  font-size: 1rem;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.check,
+.text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.check {
+  width: 26px;
+  height: 26px;
+  border: 1px solid makerLightGrey;
+  border-radius: 16px;
+  color: makerGreen;
+}
+
+.check.done {
+  border-color: makerGreen;
+}
+
+.text {
+  padding-left: 15px;
+}
+
+.text.done {
+  color: makerLightGrey;
+}
+
+.remove {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.remove:hover {
+  color: makerGreen;
+}
+
+.container:hover .remove {
+  opacity: 1;
+}

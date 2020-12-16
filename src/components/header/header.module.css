@@ -7,7 +7,7 @@
 
 .title {
   padding-right: 35px;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .title > span {
@@ -23,11 +23,4 @@
   font-size: 0.875rem;
   padding-left: 5px;
   color: makerGrey;
-}
-
-.input {
-  width: 200px;
-  height: 34px;
-  padding: 0 6px;
-  font-size: 0.75rem;
 }
