@@ -3,12 +3,22 @@ import Search from '../search/search';
 import styles from './header.module.css';
 
 const Header = () => {
+  const today = new Date();
+  const dateString = today.toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const dayName = today.toLocaleDateString('ko-KR', {
+    weekday: 'long',
+  });
+
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>
         오늘은?
-        <span className={styles.date}>2020년 12월 16일</span>
-        <span className={styles.day}>수요일</span>
+        <span className={styles.date}>{dateString}</span>
+        <span className={styles.day}>{dayName}</span>
       </h1>
       <Search />
     </header>

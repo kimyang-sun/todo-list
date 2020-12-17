@@ -1,14 +1,19 @@
-@value makerGrey from '../../common/colors.css';
+@value makerGrey, makerPink from '../../common/colors.css';
 
 .container {
   font-size: 1rem;
-  padding: 5px;
+  padding: 5px 20px 5px 5px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   transition: color 0.5s;
 }
 
 .container:hover {
   color: makerGrey;
+}
+
+.remove {
+  color: makerPink;
 }

@@ -93,6 +93,7 @@ button {
   border: none;
   color: inherit;
   outline: none;
+  padding: 0;
 }
 
 input,
