@@ -1,6 +1,6 @@
 @value makerGreen, makerPink from '../../common/colors.css';
 
-.addButton {
+.button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -9,16 +9,16 @@
   z-index: 10;
 }
 
-.addButton:hover {
+.button:hover {
   opacity: 0.7;
 }
 
-.addButton.open {
+.button.open {
   transform: translateX(-50%) rotate(45deg);
   color: makerPink;
 }
 
-.addInput {
+.input {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -31,7 +31,7 @@
   padding: 0 5px;
 }
 
-.addInput.open {
+.input.open {
   transform: translateX(-50%) translateY(-110%);
   opacity: 1;
   visibility: visible;

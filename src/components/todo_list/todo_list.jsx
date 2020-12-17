@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTodoState } from '../../todo_context';
-import TodoAdd from '../todo_add/todo_add';
+import TodoCreate from '../todo_create/todo_create';
 import TodoItem from '../todo_item/todo_item';
 import styles from './todo_list.module.css';
 
@@ -24,7 +24,7 @@ const TodoList = () => {
           />
         ))}
       </ul>
-      <TodoAdd />
+      <TodoCreate />
     </div>
   );
 };
