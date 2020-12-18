@@ -1,0 +1,33 @@
+@value makerGreen, makerPink from '../../common/colors.css';
+
+.button {
+  background-color: makerGreen;
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 3px 6px;
+  transition: opacity 0.5s;
+  border-radius: 3px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button.open {
+  background-color: makerPink;
+}
+
+.input {
+  width: 90%;
+  height: 36px;
+  padding: 0 5px;
+  font-size: 0.75rem;
+  display: none;
+  transition: all 0.5s;
+}
+
+.input.open {
+  display: block;
+}

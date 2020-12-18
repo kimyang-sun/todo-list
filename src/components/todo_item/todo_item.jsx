@@ -3,7 +3,8 @@ import styles from './todo_item.module.css';
 import { IoCheckmarkDoneOutline, IoTrashSharp } from 'react-icons/io5';
 import { useTodoDispatch } from '../../todo_context';
 
-const TodoItem = ({ id, text, done }) => {
+const TodoItem = ({ todo }) => {
+  const { id, text, done } = todo;
   const dispatch = useTodoDispatch();
   const onToggle = () => {
     dispatch({

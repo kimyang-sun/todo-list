@@ -4,27 +4,30 @@ import TodoCreate from '../todo_create/todo_create';
 import TodoItem from '../todo_item/todo_item';
 import styles from './todo_list.module.css';
 
-const TodoList = () => {
+const TodoList = ({ page }) => {
   const todos = useTodoState();
-  const undoneTasks = todos.filter(todo => !todo.done).length;
+  const undoneTasks = todos
+    .filter(todo => todo.page === page)
+    .filter(todo => !todo.done).length;
 
   return (
     <div className={styles.box}>
       <h2 className={styles.title}>
-        <span className={styles.name}>12월 17일</span>
-        <span className={styles.number}>{`할 일 ${undoneTasks}개 남음`}</span>
+        <span className={styles.name}>{page ? page : '목록이 없습니다'}</span>
+        <span className={styles.number}>
+          {page && `할 일 ${undoneTasks}개 남음`}
+        </span>
       </h2>
       <ul className={styles.todos}>
-        {todos.map(todo => (
-          <TodoItem
-            key={todo.id}
-            id={todo.id}
-            text={todo.text}
-            done={todo.done}
-          />
-        ))}
+        {todos.map(todo => {
+          if (todo.page === page) {
+            return <TodoItem key={todo.id} todo={todo} />;
+          } else {
+            return false;
+          }
+        })}
       </ul>
-      <TodoCreate />
+      <TodoCreate page={page} />
     </div>
   );
 };

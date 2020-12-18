@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import styles from './todo_create.module.css';
-import { IoAddCircleSharp } from 'react-icons/io5';
-import { useTodoDispatch, useTodoNextId } from '../../todo_context';
+import { useCategoryDispatch, useCategoryNextId } from '../../category_context';
+import styles from './category_create.module.css';
 
-const TodoCreate = ({ page }) => {
+const CategoryCreate = ({ setPage }) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
 
-  const nextId = useTodoNextId();
-  const dispatch = useTodoDispatch();
+  const dispatch = useCategoryDispatch();
+  const nextId = useCategoryNextId();
 
   const onToggle = () => setOpen(!open);
   const onChange = e => setValue(e.target.value);
@@ -16,36 +15,41 @@ const TodoCreate = ({ page }) => {
     if (e.key !== 'Enter') return;
     dispatch({
       type: 'CREATE',
-      todo: {
+      category: {
         id: nextId.current,
-        page: page,
-        text: value,
-        done: false,
+        name: value,
+        active: false,
       },
     });
+    dispatch({
+      type: 'ACTIVE',
+      id: nextId.current,
+    }); // 생성해주는 목록을 활성화 시켜줍니다
     setValue('');
     setOpen(false);
+    setPage(value); // 페이지 상태도 변경해줍니다
     nextId.current += 1;
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <button
         className={`${styles.button} ${open && styles.open}`}
+        type="button"
         onClick={onToggle}
       >
-        <IoAddCircleSharp size="50" />
+        목록 추가
       </button>
       <input
         className={`${styles.input} ${open && styles.open}`}
-        placeholder="할 일을 입력 후, Enter를 누르세요"
-        maxLength="15"
+        placeholder="입력 후, Enter를 누르세요"
+        maxLength="10"
         onChange={onChange}
         value={value}
         onKeyPress={onCreate}
       />
-    </>
+    </div>
   );
 };
 
-export default TodoCreate;
+export default CategoryCreate;

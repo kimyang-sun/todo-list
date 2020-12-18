@@ -4,22 +4,38 @@ import { createContext, useContext, useReducer, useRef } from 'react';
 const initialTodos = [
   {
     id: 1,
-    text: '할일 1',
+    page: '오늘',
+    text: '미용실 가기',
     done: true,
   },
   {
     id: 2,
-    text: '할일 2',
+    page: '오늘',
+    text: '복권 사기',
     done: true,
   },
   {
     id: 3,
-    text: '할일 3',
+    page: '오늘',
+    text: '마트 장보기',
     done: false,
   },
   {
     id: 4,
-    text: '할일 4',
+    page: '오늘',
+    text: '집 청소하기',
+    done: false,
+  },
+  {
+    id: 5,
+    page: '내일',
+    text: '강아지 장난감 사기',
+    done: false,
+  },
+  {
+    id: 6,
+    page: '내일',
+    text: '공부하기',
     done: false,
   },
 ];
@@ -35,6 +51,8 @@ function todoReducer(state, action) {
       );
     case 'REMOVE':
       return state.filter(todo => todo.id !== action.id);
+    case 'ALL_REMOVE':
+      return state.filter(todo => todo.page !== action.name);
     default:
       throw new Error(`Invalid action type ${action.type}`);
   }
@@ -48,7 +66,7 @@ const TodoNextIdContext = createContext();
 // Context 미리 useContext 사용하고 내보내기
 export function useTodoState() {
   const context = useContext(TodoStateContext);
-  if (!context) throw new Error('Cannot find TodoProvider'); // 다른곳에서 useTodoState를 사용할때 TodoProvider로 App을 감싸고 있지 않으면 오류를 보여줘야함
+  if (!context) throw new Error('Cannot find TodoState'); // 다른곳에서 useTodoState를 사용할때 TodoProvider로 App을 감싸고 있지 않으면 오류를 보여줘야함
   return context;
 }
 
@@ -67,7 +85,7 @@ export function useTodoNextId() {
 // Provider 생성
 export function TodoProvider({ children }) {
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
-  const nextId = useRef(5);
+  const nextId = useRef(parseInt(state.length + 1));
   return (
     <TodoStateContext.Provider value={state}>
       <TodoDispatchContext.Provider value={dispatch}>
