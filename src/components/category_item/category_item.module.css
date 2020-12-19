@@ -1,6 +1,6 @@
 @value makerGreen, makerGrey, makerPink from '../../common/colors.css';
 
-.container {
+.box {
   font-size: 1rem;
   padding: 5px 25px 5px 5px;
   display: flex;
@@ -10,11 +10,11 @@
   transition: color 0.5s;
 }
 
-.container:hover {
+.box:hover {
   color: makerGrey;
 }
 
-.container.active {
+.box.active {
   color: makerGreen;
 }
 

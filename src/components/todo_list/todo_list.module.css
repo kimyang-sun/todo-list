@@ -1,6 +1,6 @@
-@value makerGreen, makerLightGrey makerLightGrey from '../../common/colors.css';
+@value makerGreen, makerLightGrey from '../../common/colors.css';
 
-.box {
+.container {
   flex-grow: 1;
   margin-left: 20px;
   position: relative;

@@ -1,6 +1,6 @@
 @value makerGreen, makerGrey, makerLightGrey from '../../common/colors.css';
 
-.container {
+.box {
   font-size: 1rem;
   padding: 8px;
   display: flex;
@@ -43,6 +43,6 @@
   color: makerGreen;
 }
 
-.container:hover .remove {
+.box:hover .remove {
   opacity: 1;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTodoState } from '../../todo_context';
+import { useTodoState } from '../../context/todo_context';
 import TodoCreate from '../todo_create/todo_create';
 import TodoItem from '../todo_item/todo_item';
 import styles from './todo_list.module.css';
@@ -11,7 +11,7 @@ const TodoList = ({ page }) => {
     .filter(todo => !todo.done).length;
 
   return (
-    <div className={styles.box}>
+    <section className={styles.container}>
       <h2 className={styles.title}>
         <span className={styles.name}>{page ? page : '목록이 없습니다'}</span>
         <span className={styles.number}>
@@ -28,7 +28,7 @@ const TodoList = ({ page }) => {
         })}
       </ul>
       <TodoCreate page={page} />
-    </div>
+    </section>
   );
 };
 

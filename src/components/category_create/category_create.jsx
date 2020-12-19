@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { useCategoryDispatch, useCategoryNextId } from '../../category_context';
+import {
+  useCategoryDispatch,
+  useCategoryNextId,
+} from '../../context/category_context';
 import styles from './category_create.module.css';
 
 const CategoryCreate = ({ setPage }) => {
@@ -22,11 +25,16 @@ const CategoryCreate = ({ setPage }) => {
       },
     });
     dispatch({
+      // 생성해주는 목록을 활성화 시켜줍니다
       type: 'ACTIVE',
       id: nextId.current,
-    }); // 생성해주는 목록을 활성화 시켜줍니다
+    });
+    onUpdate();
+  };
+
+  const onUpdate = () => {
     setValue('');
-    setOpen(false);
+    setOpen(false); // 생성이 되면 생성 입력창은 닫아주고
     setPage(value); // 페이지 상태도 변경해줍니다
     nextId.current += 1;
   };

@@ -1,13 +1,12 @@
 @value makerLightGrey from '../../common/colors.css';
 
-.box {
+.container {
   flex-basis: 200px;
 }
 
 .categories {
   padding-top: 10px;
   height: 320px;
-  margin-bottom: 10px;
   overflow-y: auto;
 }
 

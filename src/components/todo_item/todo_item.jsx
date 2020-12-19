@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './todo_item.module.css';
 import { IoCheckmarkDoneOutline, IoTrashSharp } from 'react-icons/io5';
-import { useTodoDispatch } from '../../todo_context';
+import { useTodoDispatch } from '../../context/todo_context';
 
 const TodoItem = ({ todo }) => {
   const { id, text, done } = todo;
@@ -21,7 +21,7 @@ const TodoItem = ({ todo }) => {
   };
 
   return (
-    <li className={styles.container} onClick={onToggle}>
+    <li className={styles.box} onClick={onToggle}>
       <div className={styles.content}>
         <span className={`${styles.check} ${done && styles.done}`}>
           {done && <IoCheckmarkDoneOutline size="24" color="" />}

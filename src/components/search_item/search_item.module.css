@@ -1,0 +1,20 @@
+@value makerGreen, makerGrey, makerLightGrey from '../../common/colors.css';
+
+.result {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.category {
+  font-size: 0.75rem;
+  color: makerGreen;
+}
+
+.content {
+  font-size: 1rem;
+  transition: color 0.5s;
+}
+
+.content:hover {
+  color: makerGrey;
+}

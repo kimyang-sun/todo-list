@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './todo_create.module.css';
 import { IoAddCircleSharp } from 'react-icons/io5';
-import { useTodoDispatch, useTodoNextId } from '../../todo_context';
+import { useTodoDispatch, useTodoNextId } from '../../context/todo_context';
 
 const TodoCreate = ({ page }) => {
   const [open, setOpen] = useState(false);
@@ -24,7 +24,7 @@ const TodoCreate = ({ page }) => {
       },
     });
     setValue('');
-    setOpen(false);
+    setOpen(false); // 생성이 되면 입력창은 닫아줍니다.
     nextId.current += 1;
   };
 
