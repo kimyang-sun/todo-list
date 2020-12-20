@@ -41,4 +41,4 @@ const Search = ({ setSearch, searchValue, setSearchValue }) => {
   );
 };
 
-export default Search;
+export default React.memo(Search);

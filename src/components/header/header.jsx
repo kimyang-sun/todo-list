@@ -29,4 +29,4 @@ const Header = ({ setSearch, searchValue, setSearchValue }) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

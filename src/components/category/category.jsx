@@ -24,4 +24,4 @@ const Category = ({ setPage, setSearch }) => {
   );
 };
 
-export default Category;
+export default React.memo(Category);

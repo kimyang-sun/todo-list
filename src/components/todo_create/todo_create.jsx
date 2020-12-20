@@ -48,4 +48,4 @@ const TodoCreate = ({ page }) => {
   );
 };
 
-export default TodoCreate;
+export default React.memo(TodoCreate);

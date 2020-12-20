@@ -32,4 +32,4 @@ const TodoList = ({ page }) => {
   );
 };
 
-export default TodoList;
+export default React.memo(TodoList);

@@ -60,4 +60,4 @@ const CategoryCreate = ({ setPage }) => {
   );
 };
 
-export default CategoryCreate;
+export default React.memo(CategoryCreate);

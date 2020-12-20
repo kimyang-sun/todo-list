@@ -68,4 +68,4 @@ const CategoryItem = ({ category, setPage, setSearch }) => {
   );
 };
 
-export default CategoryItem;
+export default React.memo(CategoryItem);
